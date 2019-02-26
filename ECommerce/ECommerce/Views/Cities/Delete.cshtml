@@ -1,0 +1,40 @@
+﻿@model ECommerce.Models.City
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Excluir Cidade</h2>
+
+<h3>Deseja mesmo deletar?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Departaments.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departaments.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-danger" /> |
+            @Html.ActionLink("Voltar à lista", "Index")
+        </div>
+    }
+</div>

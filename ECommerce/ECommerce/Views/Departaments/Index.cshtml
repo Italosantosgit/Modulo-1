@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ECommerce.Models.Departaments>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Departamentos</h2>
+
+<p>
+    @Html.ActionLink("Criar Departamentos", "Create", new { }, new{@class = "btn btn-primary"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.DepartamentsId }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.DepartamentsId }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.DepartamentsId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
